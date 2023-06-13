@@ -9,7 +9,8 @@
                 "CMake",
                 "OpenGL",
                 "GLSL"
-            ]
+            ],
+            "imageURL": "/helmet-pbr.jpg"
         },
         {
             "title": "Rasterizer",
@@ -17,16 +18,18 @@
             "link": "https://github.com/mbenniston/rasterizer",
             "tags": [
                 "C#"
-            ]
+            ],
+            "imageURL": "/rasterizer.png"
         },
         {
             "title": "Synthesizer Visualizer",
             "description": "A virtual piano that can be played and that can play midis.",
-            "link": "https://github.com/mbenniston/sythnesizer-visualizer",
+            "link": "https://github.com/mbenniston/synthesizer-visualizer",
             "tags": [
                 "Java",
                 "OpenGL"
-            ]
+            ],
+            "imageURL": "/sythn-vis.jpg"
         },
         {
             "title": "glTF-reader",
@@ -35,7 +38,8 @@
             "tags": [
                 "C++",
                 "CMake"
-            ]
+            ],
+            "imageURL": "/gltf-readerrepo.png"
         },
         {
             "title": "synthesizer",
@@ -43,7 +47,8 @@
             "link": "https://github.com/mbenniston/synthesizer",
             "tags": [
                 "Java"
-            ]
+            ],
+            "imageURL": "/wave.png"
         },
         {
             "title": "midi",
@@ -51,10 +56,11 @@
             "link": "https://github.com/mbenniston/midi",
             "tags": [
                 "Java"
-            ]
+            ],
+            "imageURL": "/midi.png"
         },
         {
-            "title": "Emerging Finsights version 1",
+            "title": "Emerging Finsights (version 1)",
             "description": "The first version of the emerging finisights website. Made using Hugo as a static site.",
             "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v1-mirror",
             "tags": [
@@ -62,10 +68,11 @@
                 "Tailwind",
                 "HTML",
                 "Vanilla JavaScript"
-            ]
+            ],
+            "imageURL": "/efs-v1.png"
         },
         {
-            "title": "Emerging Finsights version 2",
+            "title": "Emerging Finsights (version 2)",
             "description": "The second version of the emerging finisights website. Made using NextJS as a server side rendered site using Directus as a backend.",
             "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v2-mirror",
             "tags": [
@@ -73,7 +80,8 @@
                 "Directus CMS",
                 "Tailwind",
                 "Typescript"
-            ]
+            ],
+            "imageURL": "/efs-v1.png"
         }
     ]
 }

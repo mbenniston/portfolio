@@ -1,19 +1,23 @@
 import Image from "next/image"
 import { Card } from "./card"
+import Link from "next/link"
 
 export type ProjectData = {
   title: string
   description: string
   link: string
   tags: string[]
+  imageURL: string
 }
 
 export function ProjectCard(props: { data: ProjectData }) {
   return (
-    <Card className="text-black p-8">
+    <Card className="text-black">
       <div className="flex justify-center items-center">
-        <div className="relative w-32 h-32">
-          {/* <figure className=""> <Image src={props.data.} alt={props.data.name} fill className="block w-32 h-32 shadow object-contain object-center" /> </figure> */}
+        <div className="relative w-64 h-64 lg:h-full">
+          <Link href={props.data.link}>
+            <figure className=""> <Image src={props.data.imageURL} alt={props.data.title} fill className="block shadow object-cover object-center lg:rounded-l-lg" /> </figure>
+          </Link>
         </div>
       </div>
       <div className="card-body">
@@ -22,8 +26,8 @@ export function ProjectCard(props: { data: ProjectData }) {
         <ul className="mt-8">
           {props.data.tags.map(tag => <li className="badge badge-ghost badge-lg mr-1" key={tag}> {tag}</li>)}
         </ul>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">See the code on my Github</button>
+        <div className="card-actions justify-end mt-4">
+          <Link href={props.data.link}><button className="btn btn-primary">See the code on GitHub </button></Link>
         </div>
       </div>
     </Card>

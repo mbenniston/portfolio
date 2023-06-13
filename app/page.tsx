@@ -64,7 +64,8 @@ function EducationSection() {
   const uon: EducationData = {
     name: 'MSci Computer Science, University of Nottingham',
     dataRange: '2019-2023',
-    description: '',
+    description: 'Took modules in a range of different areas however I centered my study around Human-computer-interface (HCI) concepts, graphics and games.' +
+      'I took a fourth year group project dissertation where I worked in a team to produce a virtual reality cyber-security edutainment game. ',
     logoURL: '/uon.jpg'
   }
 
