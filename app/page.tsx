@@ -13,7 +13,7 @@ export default function LandingPage() {
   return (
     <>
       <Head>
-        <title> Matthew's Portfolio </title>
+        <title> Matthew&apos;s Portfolio </title>
       </Head>
 
       <main className='bg-base-300'>
@@ -36,7 +36,7 @@ function ProjectsSection() {
       <SectionHeader> projects </SectionHeader>
 
       <div className='p-4'>
-        {projectList.map(data => <ProjectCard data={data as ProjectData} />)}
+        {projectList.map(data => <ProjectCard key={data.title} data={data as ProjectData} />)}
       </div>
     </Section>
   )
@@ -119,7 +119,7 @@ function HeroSection() {
         <Image src={MeImage} width={256} height={256} alt={'Me!'} className='rounded-full w-64 h-64 ring-white ring-4 object-cover' />
 
         <div>
-          <h1 className='text-5xl font-bold text-white'>Hi I'm <FadeText>Matthew</FadeText> 👋</h1>
+          <h1 className='text-5xl font-bold text-white'>Hi I&apos;m <FadeText>Matthew</FadeText> 👋</h1>
           <p className='text-xl py-6 text-white'>An aspiring <span className='font-mono text-black bg-white'>[games | graphics | language]</span> programmer</p>
 
           <div className='flex flex-row items-center justify-end gap-2'>
