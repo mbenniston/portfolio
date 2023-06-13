@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import MeImage from '@public/me.jpeg'
 import Head from 'next/head'
+import { ReactNode } from 'react'
+import ProjectsData from '@data/projects.json'
 
 export default function LandingPage() {
   return (
@@ -9,35 +11,11 @@ export default function LandingPage() {
         <title> Matthew's Portfolio </title>
       </Head>
 
-      <main className=''>
+      <main className='bg-base-300'>
         {HeroSection()}
-
-        <div className='bg-base-300'>
-          <h2 className='text-5xl font-bold text-center pt-4 pb-16'> useful links </h2>
-          <div>Github</div>
-          <div>LinkedIn</div>
-          <div>Email</div>
-        </div>
-
-        <div className='bg-neutral min-h-screen'>
-          <h2 className='text-5xl font-bold text-center pt-8 pb-16'> education </h2>
-          University of Nottingham 2019-2023
-        </div>
-
-        <div className='bg-base-300 min-h-screen'>
-          <h2 className='text-5xl font-bold text-center pt-8 pb-16'> experience </h2>
-          Emerging Finsights 2021-2022
-        </div>
-
-        <div className='bg-neutral min-h-screen'>
-          <h2 className='text-5xl font-bold text-center pt-8 pb-16'> projects </h2>
-          <div className='flex flex-col gap-8 p-4 items-center'>
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-          </div>
-        </div>
+        {ExperienceSection()}
+        {EducationSection()}
+        {ProjectsSection()}
       </main>
 
       <FooterSection />
@@ -45,18 +23,96 @@ export default function LandingPage() {
   )
 }
 
-function HeroSection() {
+function ProjectsSection() {
+  const projectList = ProjectsData.projects
+
   return (
-    <div className='hero min-h-screen bg-base-300'>
+    <Section>
+      <SectionHeader> projects </SectionHeader>
+
+      <div className='p-4'>
+        {projectList.map(data => <ProjectCard data={data as ProjectData} />)}
+      </div>
+    </Section>
+  )
+}
+
+function ExperienceSection() {
+  const efs: ExperienceData = {
+    name: 'Emerging Finsights',
+    dataRange: '2021-2022',
+    description: '',
+    logoURL: ''
+  }
+
+  return (
+    <Section>
+      <SectionHeader> experience </SectionHeader>
+      <div>
+        <ExperienceCard data={efs} />
+      </div>
+    </Section>
+  )
+}
+
+function EducationSection() {
+  const uon: EducationData = {
+    name: 'MSci Computer Science, University of Nottingham',
+    dataRange: '2019-2023',
+    description: '',
+    logoURL: ''
+  }
+
+  const bilborough: EducationData = {
+    name: 'A-levels, Bilborough Sixth Form College',
+    dataRange: '2017-2019',
+    description: '',
+    logoURL: ''
+  }
+
+  const aldercar: EducationData = {
+    name: 'GCSEs, Aldercar High School',
+    dataRange: '2012-2017',
+    description: '',
+    logoURL: ''
+  }
+
+  return (
+    <Section>
+      <SectionHeader> education </SectionHeader>
+      <div>
+        <EducationCard data={uon} />
+        <EducationCard data={bilborough} />
+        <EducationCard data={aldercar} />
+      </div>
+    </Section>
+  )
+}
+
+function HeroSection() {
+  const github: Socialdata = {
+    name: 'Github',
+    link: '',
+    logoURL: ''
+  }
+
+  return (
+    <Section className='hero bg-neutral min-h-screen'>
       <div className='hero-content flex-col lg:flex-row'>
-        <Image src={MeImage} width={256} height={256} alt={'Me!'} className='rounded-full max-w-sm object-cover' />
+        <Image src={MeImage} width={256} height={256} alt={'Me!'} className='rounded-full w-64 h-64 ring-white ring-4 object-cover' />
 
         <div>
-          <h1 className='text-5xl font-bold'>Hi I'm Matthew 👋</h1>
-          <p className='py-6'>An aspiring <span className='font-mono text-white bg-black'>[games | graphics | language]</span> programmer</p>
+          <h1 className='text-5xl font-bold text-white'>Hi I'm <FadeText>Matthew</FadeText> 👋</h1>
+          <p className='text-xl py-6 text-white'>An aspiring <span className='font-mono text-black bg-white'>[games | graphics | language]</span> programmer</p>
+
+          <div className='flex flex-row items-center justify-end'>
+            <SocialIcon socialData={github} />
+            <SocialIcon socialData={github} />
+            <SocialIcon socialData={github} />
+          </div>
         </div>
       </div>
-    </div>
+    </Section>
   )
 }
 
@@ -79,16 +135,115 @@ function FooterSection() {
   )
 }
 
-function ProjectCard() {
+function Section(props: { children?: ReactNode, className?: string }) {
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl max-w-3xl">
-      <figure><img src="https://picsum.photos/300/300" alt="Album" /></figure>
+    <section className={`${props.className}`}>
+
+      {props.children}
+    </section >
+  )
+}
+
+function SectionHeader(props: { children: ReactNode }) {
+  return (
+    <h2 className='text-5xl font-bold text-center pt-16 pb-8 capitalize'> {props.children} </h2>
+  )
+}
+
+type ProjectData = {
+  title: string
+  description: string
+  link: string
+}
+
+type EducationData = {
+  name: string
+  dataRange: string
+  description: string
+  logoURL: string
+}
+
+type ExperienceData = {
+  name: string
+  dataRange: string
+  description: string
+  logoURL: string
+}
+
+function EducationCard(props: { data: EducationData }) {
+  return (
+    <Card>
+      <figure> <img src="https://picsum.photos/300/300" alt="Album" /> </figure>
       <div className="card-body">
-        <h2 className="card-title">New album is released!</h2>
-        <p>Click the button to listen on Spotiwhy app.</p>
+        <h2 className="card-title">{props.data.name}</h2>
+        <p className='font-mono'>[{props.data.dataRange}]</p>
+        <p>{props.data.description}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">Listen</button>
         </div>
+      </div>
+    </Card>
+  )
+}
+
+function ExperienceCard(props: { data: ExperienceData }) {
+  return (
+    <Card>
+      <figure> <img src="https://picsum.photos/300/300" alt="Album" /> </figure>
+      <div className="card-body">
+        <h2 className="card-title">{props.data.name}</h2>
+        <p className='font-mono'>[{props.data.dataRange}]</p>
+        <p>{props.data.description}</p>
+        <div className="card-actions justify-end">
+          <button className="btn btn-primary">Listen</button>
+        </div>
+      </div>
+    </Card>
+  )
+}
+
+function ProjectCard(props: { data: ProjectData }) {
+  return (
+    <Card>
+      <figure> <img src="https://picsum.photos/300/300" alt="Album" /> </figure>
+      <div className="card-body">
+        <h2 className="card-title">{props.data.title}</h2>
+        <p>{props.data.description}</p>
+        <div className="card-actions justify-end">
+          <button className="btn btn-primary">Listen</button>
+        </div>
+      </div>
+    </Card>
+  )
+}
+
+function Card(props: { children: ReactNode }) {
+  return (
+    <div className="card lg:card-side max-w-3xl mx-auto mb-8 bg-base-100 shadow-sm">
+      {props.children}
+    </div>
+  )
+}
+
+function FadeText(props: { children: ReactNode }) {
+  return (
+    <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-600'>
+      {props.children}
+    </span>
+  )
+}
+
+type Socialdata = {
+  name: string
+  link: string
+  logoURL: string
+}
+
+function SocialIcon(props: { socialData: Socialdata }) {
+  return (
+    <div className="avatar">
+      <div className="w-16 rounded-full">
+        <img src="/gh-logo.png" />
       </div>
     </div>
   )
