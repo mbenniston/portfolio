@@ -1,7 +1,12 @@
 import Image from 'next/image'
-import MeImage from '@public/me.jpeg'
 import Head from 'next/head'
 import { ReactNode } from 'react'
+import { ProjectCard, ProjectData } from './project_card'
+import { ExperienceCard, ExperienceData } from './experience_card'
+import { EducationCard, EducationData } from './education_card'
+import { SocialIcon, Socialdata } from './social'
+
+import MeImage from '@public/me.jpeg'
 import ProjectsData from '@data/projects.json'
 
 export default function LandingPage() {
@@ -41,8 +46,8 @@ function ExperienceSection() {
   const efs: ExperienceData = {
     name: 'Emerging Finsights',
     dataRange: '2021-2022',
-    description: '',
-    logoURL: ''
+    description: 'Implemented and supported a finance news website over two versions. ',
+    logoURL: '/efs.jpeg'
   }
 
   return (
@@ -60,21 +65,21 @@ function EducationSection() {
     name: 'MSci Computer Science, University of Nottingham',
     dataRange: '2019-2023',
     description: '',
-    logoURL: ''
+    logoURL: '/uon.jpg'
   }
 
   const bilborough: EducationData = {
     name: 'A-levels, Bilborough Sixth Form College',
     dataRange: '2017-2019',
     description: '',
-    logoURL: ''
+    logoURL: '/bilborough.jpeg'
   }
 
   const aldercar: EducationData = {
     name: 'GCSEs, Aldercar High School',
     dataRange: '2012-2017',
     description: '',
-    logoURL: ''
+    logoURL: '/ahs.jpg'
   }
 
   return (
@@ -92,8 +97,20 @@ function EducationSection() {
 function HeroSection() {
   const github: Socialdata = {
     name: 'Github',
-    link: '',
-    logoURL: ''
+    link: 'https://github.com/mbenniston',
+    logoURL: '/gh-logo.png'
+  }
+
+  const linkedin: Socialdata = {
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/matthew-benniston-896346217/',
+    logoURL: '/linkedin.png'
+  }
+
+  const email: Socialdata = {
+    name: 'Email',
+    link: 'mailto://matthewpbenniston@gmail.com',
+    logoURL: '/email.jpg'
   }
 
   return (
@@ -105,10 +122,10 @@ function HeroSection() {
           <h1 className='text-5xl font-bold text-white'>Hi I'm <FadeText>Matthew</FadeText> 👋</h1>
           <p className='text-xl py-6 text-white'>An aspiring <span className='font-mono text-black bg-white'>[games | graphics | language]</span> programmer</p>
 
-          <div className='flex flex-row items-center justify-end'>
+          <div className='flex flex-row items-center justify-end gap-2'>
             <SocialIcon socialData={github} />
-            <SocialIcon socialData={github} />
-            <SocialIcon socialData={github} />
+            <SocialIcon socialData={linkedin} />
+            <SocialIcon socialData={email} />
           </div>
         </div>
       </div>
@@ -137,7 +154,7 @@ function FooterSection() {
 
 function Section(props: { children?: ReactNode, className?: string }) {
   return (
-    <section className={`${props.className}`}>
+    <section className={`p-4 ${props.className}`}>
 
       {props.children}
     </section >
@@ -146,82 +163,7 @@ function Section(props: { children?: ReactNode, className?: string }) {
 
 function SectionHeader(props: { children: ReactNode }) {
   return (
-    <h2 className='text-5xl font-bold text-center pt-16 pb-8 capitalize'> {props.children} </h2>
-  )
-}
-
-type ProjectData = {
-  title: string
-  description: string
-  link: string
-}
-
-type EducationData = {
-  name: string
-  dataRange: string
-  description: string
-  logoURL: string
-}
-
-type ExperienceData = {
-  name: string
-  dataRange: string
-  description: string
-  logoURL: string
-}
-
-function EducationCard(props: { data: EducationData }) {
-  return (
-    <Card>
-      <figure> <img src="https://picsum.photos/300/300" alt="Album" /> </figure>
-      <div className="card-body">
-        <h2 className="card-title">{props.data.name}</h2>
-        <p className='font-mono'>[{props.data.dataRange}]</p>
-        <p>{props.data.description}</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Listen</button>
-        </div>
-      </div>
-    </Card>
-  )
-}
-
-function ExperienceCard(props: { data: ExperienceData }) {
-  return (
-    <Card>
-      <figure> <img src="https://picsum.photos/300/300" alt="Album" /> </figure>
-      <div className="card-body">
-        <h2 className="card-title">{props.data.name}</h2>
-        <p className='font-mono'>[{props.data.dataRange}]</p>
-        <p>{props.data.description}</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Listen</button>
-        </div>
-      </div>
-    </Card>
-  )
-}
-
-function ProjectCard(props: { data: ProjectData }) {
-  return (
-    <Card>
-      <figure> <img src="https://picsum.photos/300/300" alt="Album" /> </figure>
-      <div className="card-body">
-        <h2 className="card-title">{props.data.title}</h2>
-        <p>{props.data.description}</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Listen</button>
-        </div>
-      </div>
-    </Card>
-  )
-}
-
-function Card(props: { children: ReactNode }) {
-  return (
-    <div className="card lg:card-side max-w-3xl mx-auto mb-8 bg-base-100 shadow-sm">
-      {props.children}
-    </div>
+    <h2 className='text-center pt-16 pb-8 text-5xl font-bold text-black capitalize'> {props.children} </h2>
   )
 }
 
@@ -230,21 +172,5 @@ function FadeText(props: { children: ReactNode }) {
     <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-600'>
       {props.children}
     </span>
-  )
-}
-
-type Socialdata = {
-  name: string
-  link: string
-  logoURL: string
-}
-
-function SocialIcon(props: { socialData: Socialdata }) {
-  return (
-    <div className="avatar">
-      <div className="w-16 rounded-full">
-        <img src="/gh-logo.png" />
-      </div>
-    </div>
   )
 }

@@ -2,33 +2,78 @@
     "projects": [
         {
             "title": "OpenGL Model Viewer",
-            "description": "",
-            "link": "https://github.com/mbenniston/opengl-model-viewer"
+            "description": "A renderer that can display glTF files using various shading algorithms.",
+            "link": "https://github.com/mbenniston/opengl-model-viewer",
+            "tags": [
+                "C++",
+                "CMake",
+                "OpenGL",
+                "GLSL"
+            ]
         },
         {
             "title": "Rasterizer",
-            "description": "",
-            "link": "https://github.com/mbenniston/opengl-model-viewer"
+            "description": "A software rasterizer written in C#.",
+            "link": "https://github.com/mbenniston/rasterizer",
+            "tags": [
+                "C#"
+            ]
         },
         {
             "title": "Synthesizer Visualizer",
-            "description": "",
-            "link": "https://github.com/mbenniston/opengl-model-viewer"
+            "description": "A virtual piano that can be played and that can play midis.",
+            "link": "https://github.com/mbenniston/sythnesizer-visualizer",
+            "tags": [
+                "Java",
+                "OpenGL"
+            ]
         },
         {
             "title": "glTF-reader",
-            "description": "",
-            "link": "https://github.com/mbenniston/opengl-model-viewer"
+            "description": "A small library that loads text and binary glTF files into a user friendly C++ structure.",
+            "link": "https://github.com/mbenniston/glTF-reader",
+            "tags": [
+                "C++",
+                "CMake"
+            ]
         },
         {
             "title": "synthesizer",
-            "description": "",
-            "link": "https://github.com/mbenniston/opengl-model-viewer"
+            "description": "Software sythesizer supporting various waveforms written in Java.",
+            "link": "https://github.com/mbenniston/synthesizer",
+            "tags": [
+                "Java"
+            ]
         },
         {
             "title": "midi",
-            "description": "",
-            "link": "https://github.com/mbenniston/opengl-model-viewer"
+            "description": "Library for reading and writing binary Midi files. Written in Java",
+            "link": "https://github.com/mbenniston/midi",
+            "tags": [
+                "Java"
+            ]
+        },
+        {
+            "title": "Emerging Finsights version 1",
+            "description": "The first version of the emerging finisights website. Made using Hugo as a static site.",
+            "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v1-mirror",
+            "tags": [
+                "Hugo",
+                "Tailwind",
+                "HTML",
+                "Vanilla JavaScript"
+            ]
+        },
+        {
+            "title": "Emerging Finsights version 2",
+            "description": "The second version of the emerging finisights website. Made using NextJS as a server side rendered site using Directus as a backend.",
+            "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v2-mirror",
+            "tags": [
+                "NextJS",
+                "Directus CMS",
+                "Tailwind",
+                "Typescript"
+            ]
         }
     ]
 }
