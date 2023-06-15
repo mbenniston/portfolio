@@ -2,7 +2,7 @@
     "projects": [
         {
             "title": "OpenGL Model Viewer",
-            "description": "A graphics renderer that can display glTF models using various shading algorithms including physically based rendering, phong and gooch.",
+            "description": "A graphics renderer that can display glTF models. Supports various shading algorithms including a physically based rendering implementation, along with phong and gooch shading.",
             "link": "https://github.com/mbenniston/opengl-model-viewer",
             "tags": [
                 "C++",
@@ -14,7 +14,7 @@
         },
         {
             "title": "Rasterizer",
-            "description": "A software rasterizer written in C#. Supports rendering .obj models with phong shading. Implements a full rasterization pipeline in software with support for perspective correct interpolation.",
+            "description": "A software rasterizer written in C#. Supports rendering .obj models with phong shading. Implements a full rasterization pipeline in software with support for perspective correct interpolation, depth testing, backface culling and texture mapping.",
             "link": "https://github.com/mbenniston/rasterizer",
             "tags": [
                 "C#"
@@ -23,7 +23,7 @@
         },
         {
             "title": "Synthesizer Visualizer",
-            "description": "A virtual piano keyboard that can be played and that can play midis.",
+            "description": "A virtual piano keyboard that can be played. Can also play midis and display the notes being played in real-time.",
             "link": "https://github.com/mbenniston/synthesizer-visualizer",
             "tags": [
                 "Java",
@@ -64,10 +64,10 @@
             "description": "The first version of the emerging finisights website. Implemented using a static site generator as a content managment system.",
             "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v1-mirror",
             "tags": [
-                "Hugo",
-                "Tailwind",
                 "HTML",
-                "Vanilla JavaScript"
+                "Vanilla JavaScript",
+                "Hugo",
+                "Tailwind"
             ],
             "imageURL": "/efs-v1.png"
         },
@@ -76,10 +76,10 @@
             "description": "The second version of the emerging finisights website. Made using NextJS to provide server side rendering and used Directus as a content management system.",
             "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v2-mirror",
             "tags": [
-                "NextJS",
-                "Directus CMS",
+                "TypeScript",
                 "Tailwind",
-                "Typescript"
+                "NextJS",
+                "Directus CMS"
             ],
             "imageURL": "/efs-v1.png"
         }

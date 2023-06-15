@@ -14,10 +14,10 @@ export default function LandingPage() {
   return (
     <>
       <main className='bg-base-300'>
-        {HeroSection()}
-        {ExperienceSection()}
-        {EducationSection()}
-        {ProjectsSection()}
+        <HeroSection />
+        <ExperienceSection />
+        <EducationSection />
+        <ProjectsSection />
       </main>
 
       <FooterSection />
@@ -31,7 +31,6 @@ function ProjectsSection() {
   return (
     <Section>
       <SectionHeader> projects </SectionHeader>
-
       <div className='p-4'>
         {projectList.map(data => <ProjectCard key={data.title} data={data as ProjectData} />)}
       </div>
@@ -61,8 +60,8 @@ function EducationSection() {
   const uon: EducationData = {
     name: 'MSci Computer Science, University of Nottingham',
     dataRange: '2019-2023',
-    description: 'Took modules in a range of different areas however I centered my study around Human-computer-interface (HCI) concepts, graphics and games.' +
-      'I took a fourth year group project dissertation where I worked in a team to produce a virtual reality cyber-security edutainment game. ',
+    description: 'Though I took modules in a range of areas, I centered my study around graphics games and Human-computer-interfaces (HCI).' +
+      'I took a fourth year group project dissertation where I worked in a team to produce a virtual reality cyber-security edutainment game.',
     logoURL: '/uon.jpg'
   }
 
@@ -118,7 +117,7 @@ function HeroSection() {
 
         <div>
           <h1 className='text-5xl font-bold text-white'>Hi I&apos;m <FadeText>Matthew</FadeText> 👋</h1>
-          <p className='text-xl py-6 text-white'>An aspiring <span className='font-mono text-black bg-white'>[games | graphics | language]</span> programmer</p>
+          <p className='text-xl py-6 text-white'>An aspiring <span className='font-mono text-black bg-white'>[graphics | games | web]</span> developer</p>
 
           <div className='flex flex-row items-center justify-end gap-2'>
             <SocialIcon socialData={github} />
@@ -148,15 +147,16 @@ function FooterSection() {
 function Section(props: { children?: ReactNode, className?: string }) {
   return (
     <section className={`p-4 ${props.className}`}>
-
       {props.children}
     </section >
   )
 }
 
-function SectionHeader(props: { children: ReactNode }) {
+function SectionHeader(props: { children?: ReactNode, className?: string }) {
   return (
-    <h2 className='text-center pt-16 pb-8 text-5xl font-bold text-black capitalize'> {props.children} </h2>
+    <h2 className={`text-center mt-16 mb-8 text-5xl font-bold text-black capitalize ${props.className}`}>
+      {props.children}
+    </h2>
   )
 }
 
