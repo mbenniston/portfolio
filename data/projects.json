@@ -2,7 +2,7 @@
     "projects": [
         {
             "title": "OpenGL Model Viewer",
-            "description": "A renderer that can display glTF files using various shading algorithms.",
+            "description": "A graphics renderer that can display glTF models using various shading algorithms including physically based rendering, phong and gooch.",
             "link": "https://github.com/mbenniston/opengl-model-viewer",
             "tags": [
                 "C++",
@@ -14,7 +14,7 @@
         },
         {
             "title": "Rasterizer",
-            "description": "A software rasterizer written in C#.",
+            "description": "A software rasterizer written in C#. Supports rendering .obj models with phong shading. Implements a full rasterization pipeline in software with support for perspective correct interpolation.",
             "link": "https://github.com/mbenniston/rasterizer",
             "tags": [
                 "C#"
@@ -23,7 +23,7 @@
         },
         {
             "title": "Synthesizer Visualizer",
-            "description": "A virtual piano that can be played and that can play midis.",
+            "description": "A virtual piano keyboard that can be played and that can play midis.",
             "link": "https://github.com/mbenniston/synthesizer-visualizer",
             "tags": [
                 "Java",
@@ -43,7 +43,7 @@
         },
         {
             "title": "synthesizer",
-            "description": "Software sythesizer supporting various waveforms written in Java.",
+            "description": "Software sythesizer supporting various audio waveforms.",
             "link": "https://github.com/mbenniston/synthesizer",
             "tags": [
                 "Java"
@@ -52,7 +52,7 @@
         },
         {
             "title": "midi",
-            "description": "Library for reading and writing binary Midi files. Written in Java",
+            "description": "Library for reading and writing binary Midi files.",
             "link": "https://github.com/mbenniston/midi",
             "tags": [
                 "Java"
@@ -61,7 +61,7 @@
         },
         {
             "title": "Emerging Finsights (version 1)",
-            "description": "The first version of the emerging finisights website. Made using Hugo as a static site.",
+            "description": "The first version of the emerging finisights website. Implemented using a static site generator as a content managment system.",
             "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v1-mirror",
             "tags": [
                 "Hugo",
@@ -73,7 +73,7 @@
         },
         {
             "title": "Emerging Finsights (version 2)",
-            "description": "The second version of the emerging finisights website. Made using NextJS as a server side rendered site using Directus as a backend.",
+            "description": "The second version of the emerging finisights website. Made using NextJS to provide server side rendering and used Directus as a content management system.",
             "link": "https://github.com/Emerging-Finsights/Emerging-Finsights-v2-mirror",
             "tags": [
                 "NextJS",
