@@ -106,7 +106,7 @@ function HeroSection() {
 
   const email: Socialdata = {
     name: 'Email',
-    link: 'mailto://matthewpbenniston@gmail.com',
+    link: 'mailto:matthewpbenniston@gmail.com',
     logoURL: '/email.jpg'
   }
 
@@ -136,7 +136,7 @@ function FooterSection() {
       <div>
         <span className="footer-title">Contact Me</span>
         <div className="grid grid-flow-row gap-4">
-          <span> <Link className='link' href='emailto://matthewpbenniston@gmail.com'>Email</Link>: matthewpbenniston@gmail.com </span>
+          <span> <Link className='link' href='mailto:matthewpbenniston@gmail.com'>Email</Link>: matthewpbenniston@gmail.com </span>
           <Link className='link' href='https://www.linkedin.com/in/matthew-benniston-896346217/'>LinkedIn</Link>
         </div>
       </div>
